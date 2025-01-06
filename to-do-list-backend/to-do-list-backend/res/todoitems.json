@@ -1,0 +1,198 @@
+[
+  {
+    "id": 1,
+    "title": "Einkaufen",
+    "description": "Milch, Eier, Brot kaufen",
+    "completed": false,
+    "date": "2024-12-31",
+    "categories": ["private"],
+    "priority": "medium",
+    "updatedAt": "2024-12-01T10:00:00Z",
+    "dueTime": "18:00",
+    "tags": ["Lebensmittel", "Haushalt"],
+    "assignedTo": "Max Mustermann",
+    "subtasks": [
+      { "title": "Liste schreiben", "completed": true },
+      { "title": "Zum Supermarkt gehen", "completed": false }
+    ],
+    "status": "in progress",
+    "progress": 2
+  },
+  {
+    "id": 2,
+    "title": "Mathe Hausaufgaben",
+    "description": "Kapitel 5 und 6 lösen",
+    "completed": false,
+    "date": "2024-12-09",
+    "categories": ["school"],
+    "priority": "high",
+    "updatedAt": "2024-12-02T07:30:00Z",
+    "dueTime": "16:00",
+    "tags": ["Mathe", "Lernen"],
+    "assignedTo": "Schülergruppe A",
+    "subtasks": [
+      { "title": "Aufgabe 1-5 lösen", "completed": false },
+      { "title": "Aufgabe 6-10 lösen", "completed": false }
+    ],
+    "status": "on hold",
+    "progress": 3
+  },
+  {
+    "id": 3,
+    "title": "Geschäftspräsentation vorbereiten",
+    "description": "PowerPoint Folien zusammenstellen",
+    "completed": false,
+    "date": "2024-12-10",
+    "categories": ["business"],
+    "priority": "high",
+    "updatedAt": "2024-12-02T09:15:00Z",
+    "dueTime": "09:00",
+    "tags": ["Präsentation", "Meeting", "Arbeit"],
+    "assignedTo": "Schülergruppe B",
+    "subtasks": [
+      { "title": "Inhalte recherchieren", "completed": true },
+      { "title": "Foliendesign erstellen", "completed": false },
+      { "title": "Übungsdurchlauf", "completed": false }
+    ],
+    "status": "in progress",
+    "progress": 0
+  },
+  {
+    "id": 4,
+    "title": "Zimmer aufräumen",
+    "description": "Schreibtisch ordnen und Staubsaugen",
+    "completed": false,
+    "date": "2024-12-08",
+    "categories": ["private"],
+    "priority": "low",
+    "updatedAt": "2024-12-03T08:00:00Z",
+    "dueTime": "20:00",
+    "tags": ["Haushalt"],
+    "assignedTo": "Schülergruppe B",
+    "subtasks": [
+      { "title": "Papierkram sortieren", "completed": false },
+      { "title": "Boden saugen", "completed": false }
+    ],
+    "status": "in progress",
+    "progress": 1
+  },
+  {
+    "id": 5,
+    "title": "Zahnarzttermin",
+    "description": "Regelmäßige Kontrolle und Zahnreinigung",
+    "completed": false,
+    "date": "2024-12-15",
+    "categories": ["private", "gesundheit"],
+    "priority": "high",
+    "updatedAt": "2024-12-04T14:20:00Z",
+    "dueTime": "10:30",
+    "tags": ["Gesundheit", "Termin"],
+    "assignedTo": "Anna Müller",
+    "subtasks": [
+      { "title": "Termin vereinbaren", "completed": true },
+      { "title": "Versicherungskarte mitnehmen", "completed": false }
+    ],
+    "status": "not started",
+    "progress": 1
+  },
+  {
+    "id": 6,
+    "title": "Projektbericht abschließen",
+    "description": "Endgültige Version des Projektberichts fertigstellen und einreichen",
+    "completed": false,
+    "date": "2024-12-20",
+    "categories": ["business", "arbeit"],
+    "priority": "high",
+    "updatedAt": "2024-12-05T09:45:00Z",
+    "dueTime": "17:00",
+    "tags": ["Bericht", "Projekt", "Arbeit"],
+    "assignedTo": "Team Alpha",
+    "subtasks": [
+      { "title": "Datenanalyse abschließen", "completed": true },
+      { "title": "Fazit und Empfehlungen schreiben", "completed": false },
+      { "title": "Bericht formatieren und überprüfen", "completed": false }
+    ],
+    "status": "in progress",
+    "progress": 2
+  },
+  {
+    "id": 7,
+    "title": "Freizeitaktivität planen",
+    "description": "Organisiere einen Wochenendausflug mit Freunden",
+    "completed": false,
+    "date": "2024-12-25",
+    "categories": ["hobby", "freizeit"],
+    "priority": "medium",
+    "updatedAt": "2024-12-06T16:00:00Z",
+    "dueTime": "12:00",
+    "tags": ["Ausflug", "Freunde", "Planung"],
+    "assignedTo": "Lukas Schmidt",
+    "subtasks": [
+      { "title": "Zielort auswählen", "completed": true },
+      { "title": "Transportmittel buchen", "completed": false },
+      { "title": "Unterkunft reservieren", "completed": false }
+    ],
+    "status": "not started",
+    "progress": 1
+  },
+  {
+    "id": 8,
+    "title": "Fitnessstudio besuchen",
+    "description": "Workout-Session im Fitnessstudio absolvieren",
+    "completed": false,
+    "date": "2024-12-07",
+    "categories": ["fitness", "gesundheit"],
+    "priority": "low",
+    "updatedAt": "2024-12-07T07:00:00Z",
+    "dueTime": "19:00",
+    "tags": ["Training", "Gesundheit", "Sport"],
+    "assignedTo": "Max Mustermann",
+    "subtasks": [
+      { "title": "Aufwärmen (10 Minuten)", "completed": true },
+      { "title": "Krafttraining (30 Minuten)", "completed": false },
+      { "title": "Cardio (20 Minuten)", "completed": false }
+    ],
+    "status": "in progress",
+    "progress": 1
+  },
+  {
+    "id": 9,
+    "title": "Lesen: Buch 'Effizientes Arbeiten'",
+    "description": "Lesen und Zusammenfassung des Buches erstellen",
+    "completed": false,
+    "date": "2024-12-18",
+    "categories": ["bildung", "persönliche Entwicklung"],
+    "priority": "medium",
+    "updatedAt": "2024-12-08T11:30:00Z",
+    "dueTime": "22:00",
+    "tags": ["Lesen", "Bildung", "Entwicklung"],
+    "assignedTo": "Schülergruppe A",
+    "subtasks": [
+      { "title": "Kapitel 1-3 lesen", "completed": true },
+      { "title": "Kapitel 4-6 lesen", "completed": false },
+      { "title": "Zusammenfassung schreiben", "completed": false }
+    ],
+    "status": "on hold",
+    "progress": 2
+  },
+  {
+    "id": 10,
+    "title": "E-Mail an Kunden senden",
+    "description": "Aktualisierung über den Projektstatus an den Kunden senden",
+    "completed": false,
+    "date": "2024-12-12",
+    "categories": ["business", "kommunikation"],
+    "priority": "high",
+    "updatedAt": "2024-12-09T10:15:00Z",
+    "dueTime": "15:00",
+    "tags": ["E-Mail", "Kunden", "Projekt"],
+    "assignedTo": "Maria Meier",
+    "subtasks": [
+      { "title": "Projektstatus überprüfen", "completed": true },
+      { "title": "E-Mail entwerfen", "completed": false },
+      { "title": "E-Mail senden", "completed": false }
+    ],
+    "status": "in progress",
+    "progress": 2
+  }
+]
