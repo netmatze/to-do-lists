@@ -590,7 +590,7 @@ Wichtige Felder:
    ```javascript
     db.<collection_name>.find().sort({ age: -1 }) // Nach Alter absteigend sortieren 
     db.todoitems.find().sort({ title: -1 }) // Nach Alter absteigend sortieren
-       ```
+   ```
 ---
 
 ## **Backup und Wiederherstellung**
