@@ -8,9 +8,11 @@ import {
     createTodoItem,
     updateTodoItem,
     patchTodoItem,
-    deleteTodoItem
+    deleteTodoItem, putTodoItem
 } from "../database/todolistdb";
 import mongoose from "mongoose";
+
+//mongoimport --uri "mongodb://localhost:27017" --db moviedb --collection movies --file todoitems.json --jsonArray --drop
 
 const express = require('express');
 
@@ -287,12 +289,10 @@ app.post("/", async (req, res) => {
         console.error("Error creating new TodoItem:", error);
         res.status(500).json({
             success: false,
-            message: "An error occurred while creating the TodoItem.",
+            message: error,
         });
     }
 });
-
-
 
 app.put("/:id", async (req, res) => {
     try {
@@ -304,7 +304,7 @@ app.put("/:id", async (req, res) => {
             });
         }
         const updateData = req.body;
-        const updatedTodoItem = await updateTodoItem(id, updateData);
+        const updatedTodoItem = await putTodoItem(id, updateData);
         // Überprüfen, ob ein Todo-Item gefunden und aktualisiert wurde
         if (!updatedTodoItem) {
             return res.status(404).json({
@@ -318,11 +318,9 @@ app.put("/:id", async (req, res) => {
         });
     } catch (error) {
         console.error("Error updating TodoItem:", error);
-
-        // Fehlerhafte Antwort
         res.status(500).json({
             success: false,
-            message: "An error occurred while updating the TodoItem.",
+            message: error,
         });
     }
 });
@@ -354,6 +352,7 @@ app.patch("/:id", async (req, res) => {
         res.status(500).json({
             success: false,
             message: "An error occurred while patching the TodoItem.",
+            error: error
         });
     }
 });

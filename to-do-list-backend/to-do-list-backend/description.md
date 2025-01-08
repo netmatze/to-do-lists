@@ -327,11 +327,104 @@ cd "C:\Users\masch\react\to-do-lists\to-do-list-backend\to-do-list-backend\res\"
 mongoimport --uri "mongodb://localhost:27017" --db test --collection todoitems --file todoitems.json --jsonArray --drop
 ```
 
-### Delete mongodb documents
+### Backup mongodb documents
 
 ```bash
 mongodump --uri "mongodb://localhost:27017" --db test --collection todoitems
 ```
+
+### Delete mongodb collection
+
+Um eine MongoDB-Collection zu löschen, kannst du den Befehl **`db.collection.drop()`** verwenden. Dieser Befehl entfernt die gesamte Collection aus der Datenbank, einschließlich aller darin enthaltenen Dokumente und Metadaten.
+
+---
+
+### **Schritte zum Löschen einer Collection**
+
+#### 1. **Mit der MongoDB-Shell verbinden**
+Verbinde dich mit der MongoDB-Shell:
+```bash
+mongo
+```
+
+#### 2. **In die richtige Datenbank wechseln**
+Wechsle zu der Datenbank, die die zu löschende Collection enthält:
+```javascript
+use <database_name>
+```
+Beispiel:
+```javascript
+use test
+```
+
+#### 3. **Collection löschen**
+Führe den folgenden Befehl aus, um die Collection zu löschen:
+```javascript
+db.<collection_name>.drop()
+```
+Beispiel:
+```javascript
+db.todoitems.drop()
+```
+
+#### 4. **Bestätigung der Löschung**
+Wenn die Collection erfolgreich gelöscht wurde, gibt der Befehl folgendes zurück:
+```javascript
+true
+```
+
+Wenn die Collection nicht existiert, wird folgendes zurückgegeben:
+```javascript
+false
+```
+
+---
+
+### **Überprüfung nach der Löschung**
+Um sicherzustellen, dass die Collection gelöscht wurde, kannst du eine Liste aller verbleibenden Collections anzeigen:
+```javascript
+show collections
+```
+
+---
+
+### **Collection löschen mit einem Skript**
+Wenn du die Löschung in einem Node.js-Skript ausführen möchtest, kannst du den MongoDB-Treiber verwenden:
+
+#### **Beispielskript:**
+```javascript
+const { MongoClient } = require("mongodb");
+
+async function deleteCollection() {
+    const uri = "mongodb://localhost:27017";
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+        const database = client.db("test");
+        const result = await database.collection("todoitems").drop();
+        console.log("Collection deleted:", result);
+    } catch (error) {
+        console.error("Error deleting collection:", error);
+    } finally {
+        await client.close();
+    }
+}
+
+deleteCollection();
+```
+
+---
+
+### **Vorsicht**
+- **Keine Wiederherstellung:** Sobald eine Collection gelöscht wurde, können die darin enthaltenen Daten nicht mehr wiederhergestellt werden (es sei denn, du hast vorher ein Backup erstellt).
+- **Alternative Methode (nur leeren):** Wenn du die Collection nicht löschen, sondern nur alle Dokumente entfernen möchtest, kannst du stattdessen `db.collection.deleteMany({})` verwenden:
+  ```javascript
+  db.todoitems.deleteMany({})
+  ```
+  Dies löscht nur die Dokumente, lässt jedoch die Collection und deren Schema (Indexe etc.) bestehen.
+
+---
 
 Hier ist eine Übersicht der wichtigsten MongoDB-Shell-Befehle, die dir bei der Arbeit mit MongoDB helfen können:
 

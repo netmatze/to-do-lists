@@ -1,0 +1,130 @@
+###
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+###
+GET http://localhost:3000/todoitem/
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/all
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/?completed=false
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/677bc8a130db5be8fdc5fe6a
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/2
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/filter?priority=low
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/filter?completed=false
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/filter?category=private
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/filter?title=Complete%20the%20project
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/sortwithorder?sortBy=priority&order=desc
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/sort?sortBy=title
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/pagination?page=2&limit=3
+Accept: application/json
+
+###
+GET http://localhost:3000/todoitem/groupbycategory
+Accept: application/json
+
+###
+POST http://localhost:3000/todoitem
+Content-Type: application/json
+
+{
+  "id": 11,
+  "title": "Complete the first project",
+  "description": "Finish the pending tasks.",
+  "completed": false,
+  "date": "2025-01-01T10:00:00Z",
+  "categories": ["Work", "Urgent"],
+  "priority": "High",
+  "dueTime": "17:00",
+  "tags": ["project", "work"],
+  "assignedTo": "John Doe",
+  "subtasks": [
+  ],
+  "progress": 50,
+  "status": "In Progress"
+}
+
+###
+PUT http://localhost:3000/todoitem/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "New PUT project title",
+  "description": "Buy groceries and supplies",
+  "completed": false,
+  "date": "2025-01-15",
+  "categories": ["business", "kommunikation"],
+  "priority": "High",
+  "updatedAt": "2025-01-07T15:00:00.000+00:00",
+  "dueTime": "15:00",
+  "tags": ["urgent", "shopping"],
+  "assignedTo": "New Doe",
+  "subtasks": [
+    { "id": 1, "title": "Buy milk", "completed": true, "status": "completed" },
+    { "id": 2, "title": "Buy eggs", "completed": false, "status": "pending" },
+    { "id": 3, "title": "Buy butter", "completed": false, "status": "pending" }
+  ],
+  "status": "pending",
+  "progress": 0
+}
+
+###
+PATCH http://localhost:3000/todoitem/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "New PATCH project title",
+  "description": "Buy PATCH groceries and supplies",
+  "completed": false
+}
+
+###
+DELETE http://localhost:3000/todoitem/
+Content-Type: application/json
+
+{
+"id": 1
+}
+
+###
+OPTIONS http://localhost:3000/todoitem/
+Accept: application/json
+
+###
+HEAD http://localhost:3000/todoitem/677b93d442ee6db006daffa6
+Accept: application/json
+

@@ -107,7 +107,6 @@ export async function findTodoitems () {
 export async function findTodoitem (filter: any) {
     try {
         console.log("Incoming filter", filter);
-        // Wenn `id` numerisch ist
         if (filter.id && !isNaN(filter.id)) {
             filter.id = parseInt(filter.id);
         }
@@ -239,9 +238,9 @@ export async function createTodoItem(data: any) {
     }
 }
 
-export async function updateTodoItem(id: number, data: any) {
+export async function putTodoItem(id: number, data: any) {
     try {
-        const updatedTodoItem = await TodoItem.findOneAndUpdate(
+        const updatedTodoItem = await TodoItem.findOneAndReplace(
             { id }, // Filter: Todo-Item mit der entsprechenden ID
             data,   // Neue Daten, die eingefügt werden sollen
             { new: true, runValidators: true } // Optionen: Rückgabe des aktualisierten Dokuments und Validierung aktivieren
